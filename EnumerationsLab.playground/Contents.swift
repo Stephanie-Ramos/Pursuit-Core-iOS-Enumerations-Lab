@@ -64,19 +64,14 @@ enum Coin: Int {
     case dime = 10
     case quarter = 25
 }
-//I'm still figure it out and I have recorded my thought processes.
-func getTotalValue(from array: [(number: Int, coin: Coin)]) -> Double { // how to ensure coin will only fall in the designated ints from coin?
-    //(number: 5, coin: 1) // multiply the ints and then sum all of your tuples together
-    //(number: 6, coin: 10) // how to have the double act like a dollar sign and cents, only need two decimal places
-    //(number: 3, coin: 25) // I cannot have a string String(format: "% .2f", result)
+func getTotalValue(from array: [(number: Int, coin: Coin)]) -> Int {
     
     var total = 0
     for num in array {
         total += num.0 * num.1.rawValue
     }
-    return Double(total)
+    return total
 }
-
 let coinArr: [(Int, Coin)] = [
     (10, .penny),
     (15, .nickle),
